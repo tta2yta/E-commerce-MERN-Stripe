@@ -12,7 +12,7 @@ type ShoppingCartProps = {
 
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
   const { closeCart, cartItems, listItems } = useShoppingCart();
-  const itemsCheckOut = [];
+  const itemsCheckOut: any = [];
 
   return (
     <Offcanvas show={isOpen} onHide={closeCart} placement="end">

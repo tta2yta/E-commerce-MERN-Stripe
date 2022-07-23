@@ -9,7 +9,7 @@ type StoreItemProps = {
   productImage: string;
   desc: string;
   catagories: string[];
-  inStock: boolean;
+  inStock?: boolean;
 };
 
 export function StoreItem({

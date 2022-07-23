@@ -1,8 +1,12 @@
 import axios from "axios";
 import { useEffect } from "react";
-import { url } from "../slices/api";
 
-const PayButton = ({ cartItems, itemsCheckOut }) => {
+type payButtonProps = {
+  cartItems: any;
+  itemsCheckOut: any;
+};
+
+const PayButton = ({ cartItems, itemsCheckOut }: payButtonProps) => {
   //   const user = useSelector((state) => state.auth);
   const url = "http://localhost:3001/api";
   const token =
