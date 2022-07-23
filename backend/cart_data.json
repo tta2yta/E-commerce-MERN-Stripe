@@ -1,0 +1,17 @@
+[
+  {
+    "userId": "62d982af33acd26e00aaec1c",
+    "Products": [{ "productId": "62d8a4e298ffec0fbc975ddd" }],
+    "totalAmt": 100
+  },
+  {
+    "userId": "62d982af33acd26e00aaec1c",
+    "Products": [{ "productId": "62d8a52998ffec0fbc975ddf" }],
+    "totalAmt": 200
+  },
+  {
+    "userId": "62d982af33acd26e00aaec1c",
+    "Products": [{ "productId": "62d8a54798ffec0fbc975de1" }],
+    "totalAmt": 300
+  }
+]

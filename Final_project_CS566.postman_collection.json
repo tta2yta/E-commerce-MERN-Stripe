@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "0fdbfdf8-d713-42b1-a24f-0ebde21d74b6",
+		"name": "Final_project_CS566",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17672577"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/products/62d8a58d98ffec0fbc975de9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"products",
+								"62d8a58d98ffec0fbc975de9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProductById",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ratchet Pruner updated\",\r\n    \"price\": 1.2,\r\n    \"desc\": \"Agriculture Tool Garden Tools PC-3140R 8-1/2 215mm Agriculture Super Auto-Rotating Ratchet Pruner\",\r\n    \"catagories\": [\"agricultural\"],\r\n    \"productImage\": \"https://s.alicdn.com/@sc04/kf/Uebfd4e3976214ca4832c93d51bad1321i.jpg_300x300.jpg\",\r\n    \"inStock\": true\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/products/62d8a59e98ffec0fbc975deb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"products",
+								"62d8a59e98ffec0fbc975deb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProductById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDhkMmIxNzRmYTNiNDE1NjI0MDQxOSIsInJvbGUiOiJzZWxsZXIiLCJ1c2VybmFtZSI6InlvbmFzIiwiaWF0IjoxNjU4Mzc4ODMzfQ.u6SWWV2qSAfk6ag_ka5YWqJw0ohyLor-p2P4jSILJj0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/products/62d8d90a10c4a665d85384ed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"products",
+								"62d8d90a10c4a665d85384ed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDhkOWNkY2JmM2EwNWJiODgyZWMwNCIsInJvbGUiOiJidXllciIsInVzZXJuYW1lIjoidGVkIiwiaWF0IjoxNjU4Mzc4NzE0fQ.NEujz4IfEi1RTxBs_aicS5KqKIAfRUgrMu-ALalHUWo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ratchet Pruner-3\",\r\n    \"price\": 1,\r\n    \"desc\": \"Agriculture Tool Garden Tools PC-3140R 8-1/2 215mm Agriculture Super Auto-Rotating Ratchet Pruner\",\r\n    \"catagories\": [\"agricultural\"],\r\n    \"productImage\": \"https://s.alicdn.com/@sc04/kf/Uebfd4e3976214ca4832c93d51bad1321i.jpg_300x300.jpg\",\r\n    \"inStock\": true\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "getAllOrders",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrderById",
+					"request": {
+						"method": "PATCH",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrdertById",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "addOrder",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDhkMmIxNzRmYTNiNDE1NjI0MDQxOSIsInJvbGUiOiJzZWxsZXIiLCJ1c2VybmFtZSI6InlvbmFzIiwiaWF0IjoxNjU4MzgxODkwfQ.rPPT5BMHEgA15XrguZPSMwzzrsFol_jFtEuGRyPeXtI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/users/62d8d9cdcbf3a05bb882ec04",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"62d8d9cdcbf3a05bb882ec04"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDhkMmIxNzRmYTNiNDE1NjI0MDQxOSIsInJvbGUiOiJzZWxsZXIiLCJ1c2VybmFtZSI6InlvbmFzIiwiaWF0IjoxNjU4MzgxNjkwfQ.HH7nTYNRyOTaC6PESkRRoSOgK-EBMcTSapspYFid-vk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserById",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDhkOWNkY2JmM2EwNWJiODgyZWMwNCIsInJvbGUiOiJidXllciIsInVzZXJuYW1lIjoidGVkIiwiaWF0IjoxNjU4MzgyNjMzfQ.tlCLxRBBIcSgV5ZJDIpnD9hiaJCbV_OTdEY-Optdybo ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ted@v2\",\r\n    \"email\": \"ted@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"role\": \"buyer\",\r\n    \"telephone\": \"2222222\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/users/62d8d9cdcbf3a05bb882ec04",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"62d8d9cdcbf3a05bb882ec04"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDhkOWNkY2JmM2EwNWJiODgyZWMwNCIsInJvbGUiOiJidXllciIsInVzZXJuYW1lIjoidGVkIiwiaWF0IjoxNjU4MzgyNjMzfQ.tlCLxRBBIcSgV5ZJDIpnD9hiaJCbV_OTdEY-Optdybo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/users/62d8d9cdcbf3a05bb882ec04",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"62d8d9cdcbf3a05bb882ec04"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sigup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ted\",\r\n    \"email\": \"ted@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"role\": \"buyer\",\r\n    \"telephone\": \"2222222\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\": \"yona@gmail.com\",\r\n    \"password\": \"1234\"\r\n    \r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/users/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "getAllCart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDhkMmIxNzRmYTNiNDE1NjI0MDQxOSIsInJvbGUiOiJzZWxsZXIiLCJ1c2VybmFtZSI6InlvbmFzIiwiaWF0IjoxNjU4NDIyNjkwfQ.ChGjhUfZWxAdsltbvdq0LyZFMchQu3YX8C1xZQQDBdI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCartById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateCartById",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDk4MmFmMzNhY2QyNmUwMGFhZWMxYyIsInJvbGUiOiJidXllciIsInVzZXJuYW1lIjoidGVkIiwiaWF0IjoxNjU4NDI3MzAxfQ.z8v9nXx0O6A-8XAte36WZSWqTBNl4pA9q8Bg-0BQtng",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"62d982af33acd26e00aaec1c\",\r\n    \"Products\": [{ \"productId\": \"62d8a4e298ffec0fbc975ddd\" }],\r\n    \"totalAmt\": 70\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/carts/62d982af33acd26e00aaec1c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"carts",
+								"62d982af33acd26e00aaec1c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCartById",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "addCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDk4MmFmMzNhY2QyNmUwMGFhZWMxYyIsInJvbGUiOiJidXllciIsInVzZXJuYW1lIjoidGVkIiwiaWF0IjoxNjU4NDIyNDMzfQ.Ve9id7HKZ4zfEjaCwlJzMYvpmIJH4l-rcckbdKhgb4s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"62d982af33acd26e00aaec1c\",\r\n    \"Products\": [{ \"productId\": \"62d8a4e298ffec0fbc975ddd\" },{ \"productId\": \"62d8a52998ffec0fbc975ddf\" }],\r\n    \"totalAmt\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": []
+		}
+	]
+}

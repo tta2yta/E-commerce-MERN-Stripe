@@ -1,0 +1,92 @@
+const list = [
+  {
+    "name": "PVC pipe",
+    "price": 7,
+    "desc": "Pvc Pipe For Water Supply",
+    "catagories": ["construction"],
+    "size": ["S", "M", "L"],
+    "color": ["red", "blue"],
+    "productImage":
+      "https://s.alicdn.com/@sc04/kf/Ha32098fb14e24df89059b8bb0c4492a1l.jpg_300x300.jpg",
+    "inStock": true,
+  },
+  {
+    "name": "Iron Sheet",
+    "price": 10,
+    "desc": "Iron Sheet ASTM A653 CSB Galvanized Steel Coil Iron Sheet Properties GI Metal Roll",
+    "catagories": ["construction"],
+    "size": ["S", "M", "L"],
+    "color": ["red", "blue", "green"],
+    "productImage":
+      "https://s.alicdn.com/@sc04/kf/Hdfaa9e9d13854aa3814b9f9cf9ca985a7.jpg_300x300.jpg",
+    "inStock": true,
+  },
+  {
+    "name": "Timber Floor",
+    "price": 8,
+    "desc": "Timber Floors Chevron Herringbone Oak Timber Hard Wood Floors Chinese Industrial Fishbone Oak ",
+    "catagories": ["construction"],
+    "size": ["S", "M", "L"],
+    "color": ["green", "gray", "brown"],
+    "productImage":
+      "https://s.alicdn.com/@sc04/kf/Hfda668ae2fe745cda63fc8176d544fedm.jpg_300x300.jpg",
+    "inStock": true,
+  },
+  {
+    "name": "Batten Timber",
+    "price": 5,
+    "desc": "Batten Timber Backyard Composite Wood Plastic Batten Square WPC Tube Timber Updated HDPE",
+    "catagories": ["construction"],
+    "size": ["S", "M", "L"],
+    "color": ["gray", "brown"],
+    "productImage":
+      "https://s.alicdn.com/@sc04/kf/Hfb64805e11744c4c87cb43be03a0ab37P.png_300x300.png",
+    "inStock": true,
+  },
+  {
+    "name": "Cermaic Tile",
+    "price": 3,
+    "desc": "Tile Best Price New Model Manufacture Luxury Flooring Tile Cheap Double Loading Super White Sparkle",
+    "catagories": ["construction"],
+    "size": ["S", "M", "L"],
+    "color": ["white", "mosaic", "blue"],
+    "productImage":
+      "https://s.alicdn.com/@sc04/kf/H04452b22197b491eb18d6c287fa3c492Y.jpg_300x300.jpg",
+    "inStock": true,
+  },
+
+  //
+  {
+    "name": "Manual Fields Sprayer",
+    "price": 6,
+    "desc": "Agricultural Agriculture Seesa 20L High Quality Knapsack Manual Agricultural Paddy Fields Sprayer ",
+    "catagories": ["agricultural"],
+    "size": ["S", "M", "L"],
+    "color": ["white", "blue", "yellow", "green"],
+    "productImage":
+      "https://s.alicdn.com/@sc04/kf/HTB121S4XB1D3KVjSZFyq6zuFpXaZ.jpg_300x300.jpg",
+    "inStock": true,
+  },
+  {
+    "name": "Drip Irrigation Tool",
+    "price": 2,
+    "desc": "Agriculture Tool Irrigation Tool Drip Irrigation System Plastic Drip Tape Fitting Agriculture Tool",
+    "catagories": ["agricultural"],
+    "size": ["S", "M", "L"],
+    "color": ["white", "blue", "yellow", "green"],
+    "productImage":
+      "https://s.alicdn.com/@sc04/kf/Ucd4ba91ff04549c8a139a6a7f92c6b38J.jpg_300x300.jpg",
+    "inStock": true,
+  },
+  {
+    "name": "Ratchet Pruner",
+    "price": 1,
+    "desc": "Agriculture Tool Garden Tools PC-3140R 8-1/2 215mm Agriculture Super Auto-Rotating Ratchet Pruner",
+    "catagories": ["agricultural"],
+    "size": ["S", "M", "L"],
+    "color": ["white", "blue", "yellow", "green"],
+    "productImage":
+      "https://s.alicdn.com/@sc04/kf/Uebfd4e3976214ca4832c93d51bad1321i.jpg_300x300.jpg",
+    "inStock": true,
+  },
+];

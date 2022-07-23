@@ -1,0 +1,16 @@
+[
+  {
+    "username": "yonas",
+    "email": "yona@gmail.com",
+    "password": "1234",
+    "role": "seller",
+    "telephone": "11111111"
+  },
+  {
+    "username": "ted",
+    "email": "ted@gmail.com",
+    "password": "1234",
+    "role": "buyer",
+    "telephone": "2222222"
+  }
+]
