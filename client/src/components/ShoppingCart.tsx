@@ -32,6 +32,9 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                 item
                   ? itemsCheckOut.push({ ...item, quantity: cartItem.quantity })
                   : "";
+                if (item !== null) {
+                  itemsCheckOut.push({ ...item, quantity: cartItem.quantity });
+                }
                 return total + (item?.price || 0) * cartItem.quantity;
               }, 0)
             )}

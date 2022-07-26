@@ -13,6 +13,7 @@ const multer = require("multer");
 
 router.post("/", checKTokenAndSeller, async (req, res, next) => {
   const newProduct = new Product(req.body);
+  console.log(req.body);
   console.log(newProduct);
   try {
     const savedProduct = await newProduct.save();
@@ -88,6 +89,35 @@ router.delete("/:id", checKTokenAndSeller, async (req, res, next) => {
     });
   } catch (err) {
     res.status(500).json({ error: err });
+  }
+});
+
+// get by product name
+router.get(["/filter/:name/:catg", "/filter/:catg"], async (req, res, next) => {
+  const name = req.params.name;
+  const catg = req.params.catg;
+  try {
+    let query = {};
+    if (name === undefined) {
+      query = { catagories: [catg] };
+    } else if (name !== null || name !== undefined) {
+      (query = { name: { $regex: name } }), { catagories: [req.params.catg] };
+    }
+    Product.find(
+      {
+        // $or: [{ name: { $regex: name } }, { catagories: [req.params.catg] }],
+        $or: [query],
+      },
+      function (err, user) {
+        if (err) {
+          res.send(err);
+        }
+        // console.log(user);
+        res.json(user);
+      }
+    );
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 });
 
