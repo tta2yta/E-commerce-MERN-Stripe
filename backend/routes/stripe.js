@@ -1,7 +1,6 @@
 const express = require("express");
 const Stripe = require("stripe");
-const UserTransactions = require("../model/UserTransactions");
-const userTransactions = require("../model/UserTransactions");
+const Cart = require("../model/cart");
 
 require("dotenv").config();
 
@@ -10,7 +9,35 @@ const stripe = Stripe(process.env.STRIPE_KEY);
 const router = express.Router();
 
 router.post("/create-checkout-session", async (req, res) => {
-  console.log(req.body.itemsCheckOut);
+  let user = {};
+  const products = [];
+
+  req.body.itemsCheckOut.map(({ _id, price, quantity, userId }) => {
+    user.userId = userId;
+    const pro = { productId: _id, price, quantity };
+    products.push(pro);
+    // transObj.push({
+    //   userId: userId,
+    //   productId: _id,
+    //   price,
+    //   quantity,
+    //   totalAmt: price * quantity,
+    // });
+  });
+
+  const sum = products.reduce((sum, i) => {
+    return sum + i.price * i.quantity;
+  }, 0);
+  const order = {
+    userId: user.userId,
+    products: products.map((item) => item),
+    totalAmt: sum,
+    paymentMode: "card",
+    status: "complete",
+  };
+  console.log(order);
+  await Cart.create(order);
+
   const line_items = req.body.itemsCheckOut.map((item) => {
     return {
       price_data: {
@@ -81,20 +108,42 @@ router.post("/create-checkout-session", async (req, res) => {
     },
     line_items,
     mode: "payment",
-    // customer: customer.id,
+    // customer: req.body.itemsCheckOut[0].userId,
     success_url: `${process.env.CLIENT_URL}/checkout-success`,
-    // success_url: await (function () {
-    //   const transObj = [];
-    //   req.body.itemsCheckOut.map(({ _id, price, quantity }) =>
-    //     transObj.push({ _id, price, quantity, date: new Date() })
-    //   );
-    //   const newTrans = new UserTransactions();
-    //   newTrans._id = "";
+    success_url: (function () {
+      // const transObj = [];
+      // const products = [];
+      // let user = {};
+      // req.body.itemsCheckOut.map( ({ _id, price, quantity, userId }) => {
+      //   user.userId = userId;
+      //   const pro = { productId: _id, price, quantity };
+      //   products.push(pro);
+      //   // transObj.push({
+      //   //   userId: userId,
+      //   //   productId: _id,
+      //   //   price,
+      //   //   quantity,
+      //   //   totalAmt: price * quantity,
+      //   // });
+      // });
 
-    //   console.log(transObj);
-    //   return `${process.env.CLIENT_URL}/checkout-success`;
-    // })(),
-    cancel_url: `${process.env.CLIENT_URL}/store`,
+      // const sum = products.reduce((sum, i) => {
+      //   return sum + i.price * i.quantity;
+      // }, 0);
+      // const order = {
+      //   userId: user.userId,
+      //   products: products,
+      //   totalAmt: sum,
+      //   status: "complete",
+      // };
+      // console.log(order);
+      // const newOrder = new Cart(order);
+      // newOrder.save();
+      //  Cart.create(order);
+
+      return `${process.env.CLIENT_URL}/checkout-success`;
+    })(),
+    cancel_url: `${process.env.CLIENT_URL}/products`,
   });
 
   console.log(session.url);

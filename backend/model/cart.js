@@ -1,11 +1,14 @@
 const mongoose = require("mongoose");
 const CartSchema = mongoose.Schema(
   {
-    userId: { type: String, required: true },
+    userId: { type: String, required: true, unique: true },
     Products: [
       {
         productId: {
           type: String,
+        },
+        price: {
+          type: Number,
         },
         quantity: {
           type: Number,
@@ -14,6 +17,8 @@ const CartSchema = mongoose.Schema(
       },
     ],
     totalAmt: { type: Number, required: true },
+    paymentMode: { type: String, required: true },
+    status: { type: String, default: "pending" },
   },
   { timestamps: true }
 );

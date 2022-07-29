@@ -22,6 +22,9 @@ const UserSchema = mongoose.Schema(
     telephone: {
       type: String,
     },
+    profileImage: {
+      type: String,
+    },
   },
   { timestamps: true }
 );

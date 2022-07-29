@@ -12,10 +12,10 @@ const cors = require("cors");
 const logger = require("morgan");
 
 const productRouter = require("./routes/product");
-const orderRouter = require("./routes/order");
+// const orderRouter = require("./routes/order");
 const userRouter = require("./routes/user");
 const cartRouter = require("./routes/cart");
-const stripe = require("./routes/stripe");
+const stripeRouter = require("./routes/stripe");
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -30,10 +30,10 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api/products", productRouter);
-app.use("/api/orders", orderRouter);
+// app.use("/api/orders", orderRouter);
 app.use("/api/users", userRouter);
 app.use("/api/carts", cartRouter);
-app.use("/api/stripe", stripe);
+app.use("/api/stripe", stripeRouter);
 
 app.use((req, res, next) => {
   const error = new Error("Not found");

@@ -13,8 +13,6 @@ const multer = require("multer");
 
 router.post("/", checKTokenAndSeller, async (req, res, next) => {
   const newProduct = new Product(req.body);
-  console.log(req.body);
-  console.log(newProduct);
   try {
     const savedProduct = await newProduct.save();
     res.status(201).json(savedProduct);
@@ -23,8 +21,8 @@ router.post("/", checKTokenAndSeller, async (req, res, next) => {
   }
 });
 
-// get products
-router.get("/", checkToken, async (req, res, next) => {
+// get products->for time being let's remove the middleware(checkToken) to get all the product list with out token q first landing of the website
+router.get("/", async (req, res, next) => {
   // find products by passing query as new or catagories
   const byNew = req.query.new;
   const byCatagory = req.query.catagory;
@@ -63,13 +61,20 @@ router.get("/:ProductId", async (req, res, next) => {
 router.patch("/:id", checKTokenAndSeller, async (req, res, next) => {
   const id = req.params.id;
   try {
-    const updatedProduct = await Product.findByIdAndUpdate(id, {
-      $set: req.body,
-    });
-    res.status(200).json({
-      message: "Product is updated",
-      updatedProduct,
-    });
+    const product = await Product.findById(id);
+    if (product) {
+      const updatedProduct = await Product.findByIdAndUpdate(id, {
+        $set: req.body,
+      });
+      res.status(200).json({
+        message: "Product is updated",
+        updatedProduct,
+      });
+    } else {
+      res.status(404).json({
+        message: "product not Found",
+      });
+    }
   } catch (err) {
     res.status(500).json({
       error: err,
@@ -77,7 +82,7 @@ router.patch("/:id", checKTokenAndSeller, async (req, res, next) => {
   }
 });
 
-// delet product by Id
+// delete product by Id
 
 router.delete("/:id", checKTokenAndSeller, async (req, res, next) => {
   const id = req.params.id;
@@ -92,7 +97,6 @@ router.delete("/:id", checKTokenAndSeller, async (req, res, next) => {
   }
 });
 
-// get by product name
 router.get(["/filter/:name/:catg", "/filter/:catg"], async (req, res, next) => {
   const name = req.params.name;
   const catg = req.params.catg;
@@ -101,7 +105,9 @@ router.get(["/filter/:name/:catg", "/filter/:catg"], async (req, res, next) => {
     if (name === undefined) {
       query = { catagories: [catg] };
     } else if (name !== null || name !== undefined) {
-      (query = { name: { $regex: name } }), { catagories: [req.params.catg] };
+      // case insenstive search using regression
+      (query = { name: { $regex: name, $options: "i" } }),
+        { catagories: [req.params.catg] };
     }
     Product.find(
       {
@@ -112,7 +118,6 @@ router.get(["/filter/:name/:catg", "/filter/:catg"], async (req, res, next) => {
         if (err) {
           res.send(err);
         }
-        // console.log(user);
         res.json(user);
       }
     );

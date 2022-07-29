@@ -13,7 +13,7 @@ const {
 router.post("/signup", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
-    if (user) res.json({ msg: "User is already existing" });
+    if (user) res.status(409).json({ msg: "User is already existing" });
     else {
       const unhashedPassword = req.body.password;
       const hash = await bcrypt.hash(unhashedPassword, 10);
@@ -43,7 +43,14 @@ router.post("/signin", async (req, res) => {
           process.env.SECRETE_JWT
           // { expiresIn: "24hr" }
         );
-        res.json({ success: true, data: token });
+        const isAdmin = user.role.toLowerCase() === "seller" ? true : false;
+        res.json({
+          success: true,
+          data: token,
+          isAdmin: isAdmin,
+          id: user._id,
+          profileImage: user.profileImage,
+        });
       } else {
         res.status(401).send("Please provide valid credentials!");
       }
